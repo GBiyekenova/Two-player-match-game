@@ -1,15 +1,15 @@
 class Player
 
-  attr_accessor :player
-  attr_reader :score
+  attr_accessor :player, :score
 
   def initialize(player)
     @player = player
     @score = 3
   end
 
-end
+  def change_score
+    @score -= 1
+  end
 
-p = Player.new(player1)
-puts p
+end
 
