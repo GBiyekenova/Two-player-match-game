@@ -1,17 +1,14 @@
-#require "./players.rb"
-print "What does 3 + 5 equal? "
-Player1 = gets.chomp
-if Player1 === "8"
-  print "score = 3/3"
-  print "Yes! you are correct."
+class Question
+  attr_reader :randomNumber1, :randomNumber2
+  def initialize
+    @randomNumber1 = rand(1..20)
+    @randomNumber2 = rand(1..20)
+  end
+  def generateQuestion(player_name)
+    puts "#{player_name} :What does #{@randomNumber1} plus #{@randomNumber2} equal?"
+  end
+  def correctAnswer
+    @randomNumber1 + @randomNumber2
+  end
 end
-if Player1 != "8"
-  print "score = 2/3"
-  print "Seriously? No!"
-end
-print "What does 4 + 5 equal?  "
-Player2 = gets.chomp
-print "What does 5 + 5 equal?  "
-Player1 = gets.chomp
-print "What does 6 + 5 equal?  "
-Player2 = gets.chomp
+
