@@ -1,3 +1,15 @@
-import Player from "./players.rb"
+require "./players.rb"
+require "./questions.rb"
+require "./game.rb"
 
-p = PLayer.new(Player1)
+def init
+
+  player1 = Player.new('player1')
+  player2 = Player.new('player2')
+  
+  game = Game.new()
+  game.init(player1,player2)
+
+end
+
+init()
